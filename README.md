@@ -16,11 +16,11 @@ TODO : Add some screenshots of the tool.
 
 ## Language and libraries used
 
-###Language used :
+### Language used :
 
 Python 3.7.0
 
-###Libraries used:
+### Libraries used:
 
 pep8 (For liniting)
 
