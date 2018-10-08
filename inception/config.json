@@ -1,0 +1,6 @@
+{
+    "Documents":"docx, doc, pdf, xls, xlsx",
+    "Music":"mp3, ogg, wav",
+    "Pictures":"jpg, jpeg, png, bmp",
+    "Videos":"mp4, mov, mkv"
+}
