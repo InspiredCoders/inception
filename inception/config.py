@@ -21,4 +21,4 @@ def get_mapping_dictionary(config_data):
         '.' + extension.split()[0]: directory_name
         for directory_name, extensions in config_data.items()
         for extension in extensions.split(',')
-        }
+    }
