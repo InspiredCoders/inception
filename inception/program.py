@@ -29,7 +29,7 @@ def main():
     configured_data = read_config()
     create_folders_if_necessary(
         list(configured_data.keys()), location
-        )
+    )
     mapping_dictionary = get_mapping_dictionary(read_config())
     move_files(mapping_dictionary, location)
 
