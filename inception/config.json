@@ -2,5 +2,9 @@
     "Documents":"docx, doc, pdf, xls, xlsx",
     "Music":"mp3, ogg, wav",
     "Pictures":"jpg, jpeg, png, bmp",
-    "Videos":"mp4, mov, mkv"
+    "Videos":"mp4, mov, mkv",
+    "torrent_files": "torrent",
+    "linux_packages": "deb, rpm",
+    "compressed": "zip, rar, tar.gz, tar",
+    "Python Codes": "py, ipynb"
 }
