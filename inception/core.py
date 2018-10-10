@@ -32,5 +32,5 @@ def move_files(mapping_dictionary, target_path):
         extension = file_path.suffix.lower()
         output_folder_path = Path(target_path).joinpath(
             mapping_dictionary.get(extension, 'Others')
-            )
+        )
         file_path.rename(output_folder_path.joinpath(file_name))
