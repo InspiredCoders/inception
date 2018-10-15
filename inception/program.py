@@ -1,19 +1,7 @@
 import os
+from docopt import docopt
 from core import get_file_names, create_folders_if_necessary, move_files
 from config import read_config, get_mapping_dictionary
-
-
-def get_user_input():
-    '''
-    Function to read user input
-    '''
-    path = ''
-    while True:
-        path = input('Provide valid folder path: ')
-        if not path.strip() or not validate_path(path):
-            continue
-        break
-    return path
 
 
 def validate_path(folder_path):
@@ -24,8 +12,21 @@ def validate_path(folder_path):
     return os.path.isdir(folder_path)
 
 
+def get_cli_args():
+    '''
+    Function to collect the command line arguments from user.
+    '''
+    doc = """Inception
+
+            Usage:
+            program.py <folder_path>
+    """
+    return docopt(doc, version='Inception 1.0')
+
+
 def main():
-    location = get_user_input()
+    arguments = get_cli_args()
+    location = arguments['<folder_path>']
     configured_data = read_config()
     create_folders_if_necessary(
         list(configured_data.keys()), location
