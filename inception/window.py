@@ -7,6 +7,18 @@ class WindowHandler:
     def __init__(self, window):
         self.win = window
 
+    def on_window_destroy(self, *args):
+        Gtk.main.quit()
+
+    def on_about_clicked(self, widget):
+        self.win.builder.get_object("about_dialog").show_all()
+
+    def on_close_clicked(self, widget):
+        pass
+
+    def on_group_clicked(self, widget):
+        pass
+
 
 class MainWindow:
     def __init__(self, handler):
