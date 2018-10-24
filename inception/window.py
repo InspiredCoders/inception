@@ -1,6 +1,7 @@
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+from program import run_app
 
 
 class WindowHandler:
@@ -16,8 +17,22 @@ class WindowHandler:
     def on_close_clicked(self, widget):
         self.win.builder.get_object("about_dialog").hide_on_delete()
 
+    def on_warning_close(self, widget):
+        self.win.builder.get_object("warning_message").hide_on_delete()
+
+    def on_success_close(self, widget):
+        self.win.builder.get_object("success_message").hide_on_delete()
+
     def on_group_clicked(self, widget):
-        pass
+        selection = self.win.builder.get_object("folder_choose")
+        path = selection.get_filename()
+
+        if path:
+            run_app(path)
+            selection.unselect_filename(path)
+            self.win.builder.get_object("success_message").show_all()
+        else:
+            self.win.builder.get_object("warning_message").show_all()
 
 
 class MainWindow:
@@ -36,5 +51,7 @@ class MainWindow:
     def main(self):
         Gtk.main()
 
-app = MainWindow(WindowHandler)
-app.main()
+
+if __name__ == "__main__":
+    app = MainWindow(WindowHandler)
+    app.main()
